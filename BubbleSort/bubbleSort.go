@@ -26,5 +26,5 @@ func BubbleSort(arr *[5] int) {
 func main() {
 	var arr [5]int = [5]int {4,3,5,6,1}
     BubbleSort(&arr)
-    fmt.Println("main arr = ", arr) // 地址传递，此处的数组顺序也会被改变
+    fmt.Println("冒泡排序后：arr = ", arr) // 地址传递，此处的数组顺序也会被改变
 }
