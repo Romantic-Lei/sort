@@ -25,6 +25,7 @@ func SelectSort(arr *[5]int) {
 		if maxIndex != i {
 			arr[i], arr[maxIndex] = arr[maxIndex], arr[i]
 		}
+		fmt.Printf("第 %d 次排序：%v\n", i + 1, *arr)
 	}
 }
 
