@@ -4,10 +4,10 @@ import (
 )
 
 func InsertSort(arr *[7]int) {
-	// 完成第一次,给第二个元素找到合适的位置并插入
+	// 完成第i次,给第i+1个元素找到合适的位置并插入
 	for i := 1; i < len(arr); i++ {
 		insertVal := arr[i] // 将当前值保存到临时变量中
-		insertIndex := i - 1 // 当前值前面一位下标值
+		insertIndex := i - 1 // 当前值前一位下标值
 	
 		// 从大到小
 		for insertIndex >= 0 && arr[insertIndex] > insertVal {
