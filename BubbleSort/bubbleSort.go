@@ -12,8 +12,10 @@ import (
 // 冒泡排序
 func BubbleSort(arr *[5] int) {
 	fmt.Println("冒泡排序前：arr =", arr)
+	// 外层循环，控制比较次数
 	for i := 0; i < len(arr) - 1; i++ {
 		for j := 0; j < len(arr) - 1 - i; j++ {
+			// 内层循环，控制每轮比较次数
 			if arr[j] > arr[j + 1] {
 				temp := arr[j]
 				arr[j] = arr[j + 1]
