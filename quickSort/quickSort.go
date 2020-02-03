@@ -11,8 +11,7 @@ import (
 // 说明
 // 1. left 表示数组左边的下标
 // 2. right 表示数组右边的下标
-
-func QuickSort(array *[8]int, left int, right int) {
+func QuickSort(array []int, left int, right int) {
 	if left < right {
 		var i int = left
 		var j int = right
@@ -46,8 +45,8 @@ func QuickSort(array *[8]int, left int, right int) {
 }
 
 func main() {
-	arr := [8]int {-9, 78, 0, 23, -567, 0, 63, -5}
+	arr := []int {-9, 78, 0, 23, -567, 0, 63, -5, 8}
 	fmt.Println("排序之前的数组 arr =", arr)
-	QuickSort(&arr, 0, len(arr) - 1)
+	QuickSort(arr, 0, len(arr) - 1)
 	fmt.Println("排序之后的数组 arr =", arr)
 }
