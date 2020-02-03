@@ -18,7 +18,7 @@ func SelectSort(arr *[5]int) {
 		for j := i + 1; j < len(arr); j++ {
 			// 内层循环，控制每轮比较次数
 			if arr[maxIndex] < arr[j] {
-				maxIndex = j
+				maxIndex = j // 找到最小值下标
 			}
 		}
 		// 如果假设的最大值索引和比较之后的索引值不一致则需要交换
