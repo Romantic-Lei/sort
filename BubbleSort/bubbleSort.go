@@ -1,6 +1,8 @@
 package main
 import (
 	"fmt"
+	"math/rand"
+	"time"
 )
 
 /**
@@ -10,8 +12,8 @@ import (
 */
 
 // 冒泡排序
-func BubbleSort(arr *[5] int) {
-	fmt.Println("冒泡排序前：arr =", arr)
+func BubbleSort(arr *[80000] int) {
+	// fmt.Println("冒泡排序前：arr =", arr)
 	// 外层循环，控制比较次数
 	for i := 0; i < len(arr) - 1; i++ {
 		for j := 0; j < len(arr) - 1 - i; j++ {
@@ -26,7 +28,17 @@ func BubbleSort(arr *[5] int) {
 }
 
 func main() {
-	var arr [5]int = [5]int {4,3,5,6,1}
-    BubbleSort(&arr)
-    fmt.Println("冒泡排序后：arr = ", arr) // 地址传递，此处的数组顺序也会被改变
+	// var arr [5]int = [5]int {4,3,5,6,1}
+	var arr [80000]int
+	rand.Seed(time.Now().UnixNano())
+	for i := 0; i < len(arr); i++ {
+		// func (r *Rand) Intn(n int) int
+		// 返回一个取值范围在[0,n)的伪随机int值，如果n<=0会panic。
+		arr[i] = rand.Intn(900000)
+	}
+	start := time.Now().Unix()
+	BubbleSort(&arr)
+	end := time.Now().Unix()
+	fmt.Printf("选择排序耗费的时间 = %d 秒", end - start)
+    // fmt.Println("冒泡排序后：arr = ", arr) // 地址传递，此处的数组顺序也会被改变
 }
